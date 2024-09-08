@@ -1,0 +1,34 @@
+{
+    "DataStores": {
+        "My_Minio_Bucket": {
+            "Endpoint": "https://play.min.io",
+            "Bucket": "faasr-nypd",
+            "Writable": "TRUE"
+        }
+    },
+    "ComputeServers": {
+        "My_GitHub_Account": {
+            "FaaSType": "GitHubActions",
+            "UserName": "Ashish-Ramrakhiani",
+            "ActionRepoName": "NYPD_Public_Safety_Analysis"
+        }
+    },
+    "FunctionList": {
+        "preprocess": {
+            "FunctionName": "preprocess_nypd_data",
+            "FaaSServer": "My_GitHub_Account",
+            "Arguments": {
+                "folder": "dataset",
+                "input_file": "NYPD_Arrest_Data__Year_to_Date__20240908.csv"
+            }
+        }
+    },
+    "FunctionGitRepo": {
+        "preprocess_nypd_data": "Ashish-Ramrakhiani/NYPD_Public_Safety_Analysis"
+    },
+    "FunctionInvoke": "preprocess",
+    "FaaSrLog": "NYPD_log",
+    "LoggingDataStore": "My_Minio_Bucket",
+    "DefaultDataStore": "My_Minio_Bucket"
+}
+
