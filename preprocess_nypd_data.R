@@ -21,7 +21,7 @@ preprocess_nypd_data <- function(folder, input_file) {
   # Creating splits for 3 CSV files: Temporal, Demographic, and Geospatial
   
   # 1. Temporal Data: ARREST_KEY, ARREST_DATE, KY_CD, LAW_CAT_CD, PD_DESC, OFNS_DESC
-  temporal_data <- nypd_data[, c('ARREST_KEY', 'ARREST_DATE', 'PD_CD','PD_DESC','KY_CD','OFNS_DESC','LAW_CAT_CD',)]
+  temporal_data <- nypd_data[, c('ARREST_KEY', 'ARREST_DATE', 'PD_CD','PD_DESC','KY_CD','OFNS_DESC','LAW_CAT_CD')]
   
   # 2. Demographic Data: ARREST_KEY, AGE_GROUP, PERP_SEX, PERP_RACE
   demographic_data <- nypd_data[, c('ARREST_KEY', 'AGE_GROUP', 'PERP_SEX', 'PERP_RACE')]
